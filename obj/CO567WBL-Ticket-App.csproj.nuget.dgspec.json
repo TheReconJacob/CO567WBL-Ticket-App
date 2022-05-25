@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App.csproj": {}
+    "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App.csproj": {
+    "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App.csproj",
+        "projectUniqueName": "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App.csproj",
         "projectName": "CO567WBL-Ticket-App",
-        "projectPath": "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App.csproj",
+        "projectPath": "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App.csproj",
         "packagesPath": "C:\\Users\\jvt05\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\CO567WBL-Ticket-App\\obj\\",
+        "outputPath": "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jvt05\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,9 +56,21 @@
               "target": "Package",
               "version": "[3.1.22, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[3.1.22, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.0.0, )"
             }
           },
           "imports": [
