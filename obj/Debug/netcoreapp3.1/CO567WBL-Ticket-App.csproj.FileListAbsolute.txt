@@ -103,11 +103,9 @@ C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
@@ -182,3 +180,5 @@ C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\FileUploadControl.dll
+C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\netcoreapp3.1\FileUploadControl.pdb
