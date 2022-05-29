@@ -1,4 +1,5 @@
-﻿using CO567WBL_Ticket_App.Models;
+﻿using CO567WBL_Ticket_App.Data;
+using CO567WBL_Ticket_App.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,16 +12,19 @@ namespace CO567WBL_Ticket_App.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext _context;
+
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            List<CO567WBL_Ticket_App.Models.EventDetails> getMovieList = _context.EventDetails.ToList();
+            return View(getMovieList);
         }
 
         public IActionResult Privacy()

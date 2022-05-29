@@ -1,8 +1,51 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<CO567WBL_Ticket_App.Models.EventDetails>
+
+@{
+    ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Event_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event_Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventPicture)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event_Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAndTime)
+            </td>
+            <td>
+                <img src="@item.EventPicture" width="100" height="100" asp-append-version="true" />
+            </td>
+            <td>
+                <a asp-action="BookNow" asp-route-id="@item.Id">Book Your Tickets</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,4 +1,5 @@
 using CO567WBL_Ticket_App.Data;
+using FileUploadControl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,8 +40,9 @@ namespace CO567WBL_Ticket_App
                     options.Password.RequiredLength = 6;
                 })
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
+            services.AddTransient<UploadInterface, UploadFileRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
