@@ -1,5 +1,6 @@
 ﻿using CO567WBL_Ticket_App.Data;
 using CO567WBL_Ticket_App.Models;
+using CO567WBL_Ticket_App.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -23,8 +24,18 @@ namespace CO567WBL_Ticket_App.Controllers
 
         public IActionResult Index()
         {
-            List<CO567WBL_Ticket_App.Models.EventDetails> getMovieList = _context.EventDetails.ToList();
+            List<EventDetails> getMovieList = _context.EventDetails.ToList();
             return View(getMovieList);
+        }
+
+        public IActionResult BookNow(int Id)
+        {
+            BookNowViewModel ViewModel = new BookNowViewModel();
+            EventDetails item = _context.EventDetails.Where(Event => Event.Id == Id).FirstOrDefault();
+            ViewModel.Event_Name = item.Event_Name;
+            ViewModel.Event_Date = item.DateAndTime;
+            ViewModel.Event_Id = Id;
+            return View(ViewModel);
         }
 
         public IActionResult Privacy()

@@ -20,5 +20,6 @@ namespace CO567WBL_Ticket_App.Data
         public DbSet<EventDetails> EventDetails { get; set; }
         public DbSet<CO567WBL_Ticket_App.Models.ViewModels.EventDetailViewModel> EventDetailViewModel { get; set; }
         public DbSet<CO567WBL_Ticket_App.Models.ApplicationUser> ApplicationUser { get; set; }
+        public DbSet<CO567WBL_Ticket_App.Models.ViewModels.BookNowViewModel> BookNowViewModel { get; set; }
     }
 }
