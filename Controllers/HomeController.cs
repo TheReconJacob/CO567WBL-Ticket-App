@@ -91,6 +91,25 @@ namespace CO567WBL_Ticket_App.Controllers
             else
                 return false;
         }
+        [HttpPost]
+        public IActionResult CheckSeat(DateTime Event_Date, BookNowViewModel BookNow)
+        {
+            string Seat_No = string.Empty;
+            List<BookingTable> Event_List = _context.BookingTable.Where(Table => Table.DateToPresent == Event_Date).ToList();
+            if(Event_List != null)
+            {
+                List<BookingTable> Get_Seat_No = Event_List.Where(Table => Table.EventDetailsId == BookNow.Event_Id).ToList();
+                if(Get_Seat_No != null)
+                {
+                    foreach(BookingTable item in Get_Seat_No)
+                    {
+                        Seat_No = Seat_No + " " + item.Seat_No.ToString();
+                    }
+                    TempData["SNO"] = "Seat " + Seat_No + "has already been booked";
+                }
+            }
+            return View();
+        }
 
         public IActionResult Privacy()
         {
