@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -34,12 +35,14 @@ namespace CO567WBL_Ticket_App.Controllers
         [HttpPost]
         public IActionResult Create(IList<IFormFile> Files, EventDetailViewModel ViewModel, EventDetails Event)
         {
+            string path = string.Empty;
             Event.Event_Name = ViewModel.Name;
             Event.Event_Description = ViewModel.Description;
             Event.DateAndTime = ViewModel.DateOfMovie;
             foreach(IFormFile File in Files)
             {
-                Event.EventPicture = "~/uploads/" + File.FileName.Trim();
+                path = Path.GetFileName(File.FileName.Trim());
+                Event.EventPicture = "~/uploads/" + path;
             }
             _upload.UploadFileMultiple(Files);
             _context.EventDetails.Add(Event);

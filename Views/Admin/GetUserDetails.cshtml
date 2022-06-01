@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
 
 @{
-    ViewData["Title"] = "GetUserDetails";
+    ViewData["Title"] = "All Users";
 }
 
-<h1>GetUserDetails</h1>
+<h1>@ViewData["Title"]</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>

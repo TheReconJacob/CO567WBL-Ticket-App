@@ -1,0 +1,69 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@model IEnumerable<CO567WBL_Ticket_App.Models.Cart>
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Seat Number
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    Event ID
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Seat_No)
+                    </td>
+                    <td>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            @Html.DisplayFor(modelItem => User.Identity.Name)
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => "Guest")
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        £@Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventId)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        Amount Total = £@Model.Sum(i => i.Amount)
+    </div>
+    <input type="submit" value="Book Tickets" asp-controller="Cart" asp-action="BookTicket" formmethod="post" />
+</form>

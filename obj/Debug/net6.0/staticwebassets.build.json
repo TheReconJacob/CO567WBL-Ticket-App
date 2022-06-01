@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "O0eDPoh7prJw5znSk2dIwcYKiOjy0UG3kTcsRA4rVE0=",
+  "Hash": "bWUKqNvNdYyZmIAqdz1z5X8TTqPzRHd0/eVNsNwIH4E=",
   "Source": "CO567WBL-Ticket-App",
   "BasePath": "_content/CO567WBL-Ticket-App",
   "Mode": "Default",
@@ -1647,6 +1647,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\wwwroot\\uploads\\Cobra Kai I love you Meme Template.png",
+      "SourceId": "CO567WBL-Ticket-App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\wwwroot\\",
+      "BasePath": "_content/CO567WBL-Ticket-App",
+      "RelativePath": "uploads/Cobra Kai I love you Meme Template.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Cobra Kai I love you Meme Template.png"
+    },
+    {
+      "Identity": "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\wwwroot\\uploads\\this-smart-planter-will-monitor-your-indoor-plants-and-it-acts-just-like-a-tamagotchi-pet-og.jpg",
+      "SourceId": "CO567WBL-Ticket-App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\wwwroot\\",
+      "BasePath": "_content/CO567WBL-Ticket-App",
+      "RelativePath": "uploads/this-smart-planter-will-monitor-your-indoor-plants-and-it-acts-just-like-a-tamagotchi-pet-og.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\this-smart-planter-will-monitor-your-indoor-plants-and-it-acts-just-like-a-tamagotchi-pet-og.jpg"
     }
   ]
 }

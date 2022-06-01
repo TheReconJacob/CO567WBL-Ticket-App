@@ -1,0 +1,63 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@model IEnumerable<CO567WBL_Ticket_App.Models.BookingTable>
+
+@{
+    ViewData["Title"] = "Your Bookings";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Seat Number
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Event ID
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seat_No)
+                </td>
+                <td>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        @Html.DisplayFor(modelItem => User.Identity.Name)
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => "Guest")
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateToPresent)
+                </td>
+                <td>
+                    £@Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventDetailsId)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
