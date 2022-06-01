@@ -117,6 +117,12 @@ namespace CO567WBL_Ticket_App.Controllers
             return View();
         }
 
+        public IActionResult YourBookings()
+        {
+            var GetBookingTable = _context.BookingTable.ToList();
+            return View(GetBookingTable);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
