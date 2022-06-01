@@ -5,10 +5,14 @@
 @model IEnumerable<CO567WBL_Ticket_App.Models.Cart>
 
 @{
-    ViewData["Title"] = "Cart";
+    ViewData["Title"] = "Checkout";
 }
 
 <h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <form>
     <table class="table">
         <thead>
@@ -57,14 +61,12 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.EventId)
                     </td>
-                    <td>
-                        <a asp-action="Delete" asp-route-id="@item.Id" asp-controller="Cart">Delete</a>
-                    </td>
                 </tr>
             }
         </tbody>
     </table>
     <div>
-        <input type="submit" value="Proceed to Checkout" asp-action="Proceed" asp-controller="Cart" />
+        Amount Total = £@Model.Sum(i => i.Amount)
     </div>
+    <input type="submit" value="Book Tickets" asp-controller="Cart" asp-action="BookTicket" formmethod="post" />
 </form>

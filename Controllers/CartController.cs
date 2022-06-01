@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -29,6 +30,25 @@ namespace CO567WBL_Ticket_App.Controllers
         public IActionResult CartEmpty()
         {
             TempData["cartempty"] = "Your Cart is empty.";
+            return View();
+        }
+        
+        public IActionResult BookTicket()
+        {
+            List<Cart> CartList = _context.Cart.Where(cart => cart.UserId == _userManager.GetUserId(HttpContext.User)).ToList();
+            List<BookingTable> Bookings = new List<BookingTable>();
+            foreach(Cart cart in CartList)
+            {
+                Bookings.Add(new BookingTable { Seat_No = cart.Seat_No, User_Id = cart.UserId, DateToPresent = cart.Date, EventDetailsId = cart.EventId, Amount = cart.Amount });
+                _context.Cart.Remove(cart);
+            }
+            foreach(BookingTable booking in Bookings)
+            {
+                _context.BookingTable.Add(booking);
+                _context.SaveChanges();
+            }
+
+            Debug.WriteLine("HELLOOOOOOOO");
             return View();
         }
 

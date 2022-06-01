@@ -1,28 +1,28 @@
 ﻿@model IEnumerable<CO567WBL_Ticket_App.Models.EventDetails>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Upcoming Events/Shows";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" asp-controller="Admin">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Event_Name)
+                Event Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Event_Description)
+                Event Description
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateAndTime)
+                Date and Time
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EventPicture)
+                Poster
             </th>
             <th></th>
         </tr>

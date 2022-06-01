@@ -31,8 +31,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0VXNlckRldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/jvt05/OneDrive - Sky/Bucks Uni/CO567WBL-Ticket-App/Views/Cart/BookTicket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxCb29rVGlja2V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jvt05/OneDrive - Sky/Bucks Uni/CO567WBL-Ticket-App/Views/Cart/CartEmpty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDYXJ0RW1wdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/jvt05/OneDrive - Sky/Bucks Uni/CO567WBL-Ticket-App/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jvt05/OneDrive - Sky/Bucks Uni/CO567WBL-Ticket-App/Views/Cart/Proceed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQcm9jZWVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/jvt05/OneDrive - Sky/Bucks Uni/CO567WBL-Ticket-App/Views/Home/BookNow.cshtml]

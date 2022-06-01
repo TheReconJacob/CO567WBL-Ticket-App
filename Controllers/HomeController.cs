@@ -44,28 +44,29 @@ namespace CO567WBL_Ticket_App.Controllers
         [HttpPost]
         public IActionResult BookNow(BookNowViewModel ViewModel)
         {
-            List<BookingTable> Bookings = new List<BookingTable>();
             List<Cart> Carts = new List<Cart>();
             string Seat_No = ViewModel.Seat_No.ToString();
             int EventId = ViewModel.Event_Id;
+            DateTime EventDate = _context.EventDetails.Where(Event => Event.Id == ViewModel.Event_Id).FirstOrDefault().DateAndTime;
+            Debug.WriteLine("EVENTDATE: " + EventDate);
             string[] Seat_No_Array = Seat_No.Split(',');
             count = Seat_No_Array.Length;
             if(CheckSeat(Seat_No, EventId) == false)
             {
                 foreach(string item in Seat_No_Array)
                 {
-                    Carts.Add(new Cart { Amount = 150, EventId = ViewModel.Event_Id, UserId = _userManager.GetUserId(HttpContext.User), Date = ViewModel.Event_Date, Seat_No = item });
-                };
+                    Carts.Add(new Cart { Amount = 150, EventId = ViewModel.Event_Id, UserId = _userManager.GetUserId(HttpContext.User), Date = EventDate, Seat_No = item });
+                }
                 foreach (var item in Carts)
                 {
                     _context.Cart.Add(item);
                     _context.SaveChanges();
                 }
-                TempData["Success"]="Seat has been Booked, Check Your Cart";
+                TempData["Success"]="Seat has added to your Cart";
             }
             else
             {
-                TempData["SeatNoMsg"] = "Seat is no longer available, please choose another";
+                TempData["Success"] = "Seat is no longer available, please choose another";
             }
             return RedirectToAction("BookNow");
         }
