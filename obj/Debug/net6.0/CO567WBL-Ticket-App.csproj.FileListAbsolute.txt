@@ -579,3 +579,4 @@ C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\net6.0\ref
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\net6.0\refs\System.Security.Cryptography.Xml.dll
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+C:\Users\jvt05\OneDrive - Sky\Bucks Uni\CO567WBL-Ticket-App\obj\Debug\net6.0\CO567WBL-Ticket-App.csproj.CopyComplete
