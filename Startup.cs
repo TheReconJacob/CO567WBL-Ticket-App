@@ -39,10 +39,12 @@ namespace CO567WBL_Ticket_App
                     options.Password.RequireUppercase = false;
                     options.Password.RequiredLength = 6;
                 })
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
             services.AddTransient<UploadInterface, UploadFileRepo>();
+            services.Configure<SecurityStampValidatorOptions>(options => { options.ValidationInterval = TimeSpan.Zero; });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

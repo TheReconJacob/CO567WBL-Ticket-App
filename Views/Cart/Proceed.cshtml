@@ -10,60 +10,65 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<form>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Seat Number
-                </th>
-                <th>
-                    Email
-                </th>
-                <th>
-                    Date
-                </th>
-                <th>
-                    Amount
-                </th>
-                <th>
-                    Event ID
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+@if (SignInManager.IsSignedIn(User))
+{
+    <form>
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Seat_No)
-                    </td>
-                    <td>
-                        @if (SignInManager.IsSignedIn(User))
-                        {
-                            @Html.DisplayFor(modelItem => User.Identity.Name)
-                        }
-                        else
-                        {
-                            @Html.DisplayFor(modelItem => "Guest")
-                        }
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Date)
-                    </td>
-                    <td>
-                        £@Html.DisplayFor(modelItem => item.Amount)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EventId)
-                    </td>
+                    <th>
+                        Seat Number
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Amount
+                    </th>
+                    <th>
+                        Event ID
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Seat_No)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => User.Identity.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            £@Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventId)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div>
+            Amount Total = £@Model.Sum(i => i.Amount)
+        </div>
+        <input type="submit" value="Book Tickets" asp-controller="Cart" asp-action="BookTicket" formmethod="post" />
+    </form>
+}
+else
+{
+    <a>Sorry, you need to be signed into an account to do this.</a>
+    <br /><br />
     <div>
-        Amount Total = £@Model.Sum(i => i.Amount)
+        You can <a href="/Identity/Account/Login">Login</a> here.
+        Or <a href="/Identity/Account/Register">Register</a> if you haven't created an account yet.
     </div>
-    <input type="submit" value="Book Tickets" asp-controller="Cart" asp-action="BookTicket" formmethod="post" />
-</form>
+}

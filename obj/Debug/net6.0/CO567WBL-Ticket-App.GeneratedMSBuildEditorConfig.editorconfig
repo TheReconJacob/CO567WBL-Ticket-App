@@ -19,6 +19,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/jvt05/OneDrive - Sky/Bucks Uni/CO567WBL-Ticket-App/Views/AddRole/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkUm9sZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/jvt05/OneDrive - Sky/Bucks Uni/CO567WBL-Ticket-App/Views/Admin/CheckBookSeat.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2hlY2tCb29rU2VhdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -29,6 +33,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/jvt05/OneDrive - Sky/Bucks Uni/CO567WBL-Ticket-App/Views/Admin/GetUserDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0VXNlckRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jvt05/OneDrive - Sky/Bucks Uni/CO567WBL-Ticket-App/Views/AssignRole/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaWduUm9sZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/jvt05/OneDrive - Sky/Bucks Uni/CO567WBL-Ticket-App/Views/Cart/BookTicket.cshtml]

@@ -1,5 +1,29 @@
-﻿<h1>Booking Successful</h1>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
-<p>
-    Congratulations! Your booking has been made!
-</p>
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h1>Booking Successful</h1>
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <p>
+        Congratulations! Your booking has been made!
+    </p>
+}
+else
+{
+    <h1>How did you even get here?</h1>
+
+    <p>
+        You seriously aren't logged into an account yet? How did you even make it this far?
+    </p>
+    
+    <div>
+        Please <a href="/Identity/Account/Login">Login</a> here.
+        Or <a href="/Identity/Account/Register">Register</a> if you haven't created an account yet.
+    </div>
+}
