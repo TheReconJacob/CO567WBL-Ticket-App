@@ -16373,6 +16373,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\Views\\AddRole\\Create.cshtml",
+      "TargetPath": "Views\\AddRole\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\Views\\AssignRole\\Create.cshtml",
+      "TargetPath": "Views\\AssignRole\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\jvt05\\OneDrive - Sky\\Bucks Uni\\CO567WBL-Ticket-App\\Views\\Home\\CheckSeat.cshtml",
       "TargetPath": "Views\\Home\\CheckSeat.cshtml",
       "FileKind": "mvc"

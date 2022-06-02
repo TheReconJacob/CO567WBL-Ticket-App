@@ -1,4 +1,7 @@
-﻿@model IEnumerable<CO567WBL_Ticket_App.Models.EventDetails>
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+
+@model IEnumerable<CO567WBL_Ticket_App.Models.EventDetails>
 
 @{
     ViewData["Title"] = "Upcoming Events/Shows";
@@ -7,7 +10,10 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create" asp-controller="Admin">Create New</a>
+    @if (User.IsInRole("Venue Manager"))
+    {
+        <a asp-action="Create" asp-controller="Admin">Create New</a>
+    }
 </p>
 <table class="table">
     <thead>
@@ -28,24 +34,25 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Event_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Event_Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateAndTime)
-            </td>
-            <td>
-                <img src="@item.EventPicture" width="100" height="100" asp-append-version="true" />
-            </td>
-            <td>
-                <a asp-action="BookNow" asp-route-id="@item.Id">Book Your Tickets</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Event_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Event_Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateAndTime)
+                </td>
+                <td>
+                    <img src="@item.EventPicture" width="100" height="100" asp-append-version="true" />
+                </td>
+                <td>
+                    <a asp-action="BookNow" asp-route-id="@item.Id">Book Your Tickets</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

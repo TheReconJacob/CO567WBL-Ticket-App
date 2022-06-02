@@ -2,6 +2,7 @@
 using CO567WBL_Ticket_App.Models;
 using CO567WBL_Ticket_App.Models.ViewModels;
 using FileUploadControl;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace CO567WBL_Ticket_App.Controllers
 {
+    [Authorize(Roles = "Venue Manager")]
     public class AdminController : Controller
     {
         private ApplicationDbContext _context;
