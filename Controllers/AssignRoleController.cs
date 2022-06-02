@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace CO567WBL_Ticket_App.Controllers
 {
+    [Authorize(Roles = "Agent,Venue Manager")]
     public class AssignRoleController : Controller
     {
         private UserManager<IdentityUser> userManager;

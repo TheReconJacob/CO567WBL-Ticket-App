@@ -1,5 +1,6 @@
 using CO567WBL_Ticket_App.Data;
 using FileUploadControl;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -41,6 +42,13 @@ namespace CO567WBL_Ticket_App
                 })
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            // services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            // .AddCookie(options =>
+            // {
+            //     options.LoginPath = "/Identity/Account/Login";
+            //     options.LogoutPath = "/Identity/Account/Logout";
+            // });
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
             services.AddTransient<UploadInterface, UploadFileRepo>();

@@ -36,30 +36,26 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Seat_No)
-                    </td>
-                    <td>
-                        @if (SignInManager.IsSignedIn(User))
-                        {
+                if(item.User_Id == UserManager.GetUserId(User))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Seat_No)
+                        </td>
+                        <td>
                             @Html.DisplayFor(modelItem => User.Identity.Name)
-                        }
-                        else
-                        {
-                            @Html.DisplayFor(modelItem => "Guest")
-                        }
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DateToPresent)
-                    </td>
-                    <td>
-                        £@Html.DisplayFor(modelItem => item.Amount)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EventDetailsId)
-                    </td>
-                </tr>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateToPresent)
+                        </td>
+                        <td>
+                            £@Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventDetailsId)
+                        </td>
+                    </tr>
+                }
             }
         </tbody>
     </table>

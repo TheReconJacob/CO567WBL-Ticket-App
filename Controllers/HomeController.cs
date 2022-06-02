@@ -1,6 +1,8 @@
 ﻿using CO567WBL_Ticket_App.Data;
 using CO567WBL_Ticket_App.Models;
 using CO567WBL_Ticket_App.Models.ViewModels;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -17,16 +19,36 @@ namespace CO567WBL_Ticket_App.Controllers
         int count = 1;
         bool Flag = true;
         private UserManager<IdentityUser> _userManager;
+        private SignInManager<IdentityUser> _signInManager;
         private ApplicationDbContext _context;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public HomeController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public HomeController(ApplicationDbContext context, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
-            _context = context;
             _userManager = userManager;
+            _signInManager = signInManager;
+            _context = context;
+            _roleManager = roleManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var RoleExist = await _roleManager.RoleExistsAsync("Venue Manager");
+            string PreviousPage = Request.Headers["Referer"].ToString();
+            if (!RoleExist && _signInManager.IsSignedIn(User))
+            {
+                await _roleManager.CreateAsync(new IdentityRole("Venue Manager"));
+                await _roleManager.CreateAsync(new IdentityRole("Agent"));
+                await _userManager.AddToRoleAsync(_userManager.GetUserAsync(User).Result, "Venue Manager");
+            }
+            if (PreviousPage.EndsWith("Register"))
+            {
+                foreach (var cookie in Request.Cookies.Keys)
+                {
+                    Response.Cookies.Delete(cookie);
+                }
+                return RedirectToAction("AccountCreated", "Home");
+            }
             List<EventDetails> getMovieList = _context.EventDetails.ToList();
             return View(getMovieList);
         }
@@ -115,6 +137,16 @@ namespace CO567WBL_Ticket_App.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult AccountCreated()
+        {
+            string PreviousPage = Request.Headers["Referer"].ToString();
+            if (PreviousPage.EndsWith("Register") && !_signInManager.IsSignedIn(User))
+            {
+                return View();
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult YourBookings()
